@@ -5,8 +5,6 @@ The main script
 
 Goal : Creating a Vinted bot that will send a notification as soon as a new article is available.
 We can pass some arguments like the price, the size, the type of article, etc...
-
-Warning: f-strings works from 3.6
 """
 import json
 from time import sleep
@@ -28,9 +26,9 @@ def update_data(items, notification):
 
     response = get(config.URL)
     response.raise_for_status() # exception catched in the main loop
-    soup = BeautifulSoup(response.text, 'lxml') # lxml is faster but a dependency, because of its need to compile at install
+    soup = BeautifulSoup(response.text, 'lxml') # lxml is faster but a dependency, "html.parser" is quite fast and installed by default
     script = soup.find_all('script')[47] # careful with this as it might change at any update
-    data = json.loads(script.string) # might check the content_type="application/json" --> soup.find_all("script", attrs={"content_type": "application/json"})
+    data = json.loads(script.string) # might check the type="application/json"
     data = data['items']['byId'].values()
     # log(data, "Vinted") # --> debug
     
