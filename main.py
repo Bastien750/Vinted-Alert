@@ -45,6 +45,7 @@ def update_data():
             script = soup.find_all('script')[47]
             data = json.loads(script.string)
             data = data['items']['byId'].values()
+            print(data)
             for item in data:
                 # Collect data
                 title = item['title']

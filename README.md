@@ -17,5 +17,5 @@ $ pip install -r requirements.txt
 ```
 
 ```sh
-$ python scrapper.py
+$ python main.py
 ```
