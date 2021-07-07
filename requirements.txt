@@ -1,4 +1,4 @@
 python_telegram_bot==13.7
 requests==2.24.0
 beautifulsoup4==4.9.3
-telegram==0.0.1
+lxml
