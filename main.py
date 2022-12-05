@@ -28,13 +28,13 @@ def update_data(items, notification):
     
     for item in data:
         # Collect data
-        title = item.get("title", "N/A")
-        price = item.get("price", -1) # snake cased?!
-        currency = item.get("currency", "€")
+        title = item.title
+        price = item.price
+        currency = item.currency
         price = "%f %s" % (price, currency)
-        brand = item.get("brand_title", "N/A")
-        images = item.get("photo", "No Photo") # should it be an URL --> provide a "Not Found URL"
-        url = item.get("url", "N/A") # provide not found as default
+        brand = item.brand_title
+        images = item.photo
+        url = item.url
         # item = "{login} - {title} {actual_price} € : {description}".format(login=login, title=title, actual_price=actual_price, description=description)
         item = "%s - %s" % (title, price)
         # Save the item
