@@ -31,7 +31,7 @@ def update_data(items, notification):
         title = item.title
         price = item.price
         currency = item.currency
-        price = "%f %s" % (price, currency)
+        price = "%s %s" % (price, currency)
         brand = item.brand_title
         images = item.photo
         url = item.url
