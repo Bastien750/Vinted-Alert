@@ -33,7 +33,7 @@ def update_data(items, notification):
         currency = item.currency
         price = "%s %s" % (price, currency)
         brand = item.brand_title
-        images = item.photo
+        image = item.photo
         url = item.url
         # item = "{login} - {title} {actual_price} € : {description}".format(login=login, title=title, actual_price=actual_price, description=description)
         item = "%s - %s" % (title, price)
@@ -48,7 +48,7 @@ def update_data(items, notification):
                 url = url
             )
             # Send notification
-            send_notification(content, images, notification)
+            send_notification(content, image, notification)
             items.append(item)
         else:
             log("{item} => {url}".format(item=item, url=url), domain="Vinted")
